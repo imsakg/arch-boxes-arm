@@ -48,7 +48,7 @@ trap cleanup EXIT
 function setup_disk() {
   truncate -s "${DEFAULT_DISK_SIZE}" "${IMAGE}"
   sgdisk --clear \
-    --new 1::+200M --typecode=1:ef00 \
+    --new 1::+1000M --typecode=1:ef00 \
     --new 2::-0 --typecode=2:8300 \
     "${IMAGE}"
 
